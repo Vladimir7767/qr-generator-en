@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online QR Code Generator — Create QR Code Instantly</title>
+    <meta name="description" content="Free and fast online QR code generator. Create a high-quality QR code for links, text, or business cards in one click without registration.">
+    
+    <!-- MONETIZATION ADSTERRA DIRECT LINK -->
+    <script>
+        document.addEventListener('click', function() {
+            if (!window.adOpened) {
+                window.open('https://effectivecpmnetwork.com', '_blank');
+                window.adOpened = true;
+            }
+        });
+    </script>
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; color: #1f2937; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 420px; width: 100%; text-align: center; }
+        h1 { font-size: 24px; color: #111827; margin-bottom: 20px; }
+        input { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; font-size: 15px; margin-bottom: 15px; }
+        button { width: 100%; padding: 12px; background: #4f46e5; border: none; color: white; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: #4338ca; }
+        #qrcode { margin: 25px auto; display: flex; justify-content: center; }
+        .faq { margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 20px; font-size: 13px; color: #4b5563; text-align: left; line-height: 1.6; }
+    </style>
+    <!-- Connecting QR Code library -->
+    <script src="https://cloudflare.com"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>QR Code Generator</h1>
+    
+    <input type="text" id="textInput" placeholder="Paste a link or text for your QR code...">
+    <button onclick="generateQR()">Generate QR Code</button>
+    
+    <div id="qrcode"></div>
+
+    <div class="faq">
+        <h3>How to use the QR code?</h3>
+        <p>Enter any URL or text in the field above and click the button. The system will instantly create a matrix barcode. You can save it by taking a screenshot or scan it directly from the screen with your smartphone camera.</p>
+    </div>
+</div>
+
+<script>
+let qrcodeInstance = null;
+
+function generateQR() {
+    const text = document.getElementById('textInput').value.trim();
+    const qrDiv = document.getElementById('qrcode');
+    
+    if (!text) {
+        alert('Please enter a link or text!');
+        return;
+    }
+
+    qrDiv.innerHTML = '';
+
+    qrcodeInstance = new QRCode(qrDiv, {
+        text: text,
+        width: 200,
+        height: 200,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+}
+</script>
+
+</body>
+</html>
