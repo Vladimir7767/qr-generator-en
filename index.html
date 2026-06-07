@@ -50,7 +50,7 @@ function startSecureProcess() {
         var qrLibScript = document.createElement('script');
         qrLibScript.type = 'text/javascript';
         
-        // Принудительная защищенная сборка ссылки на ядро из массива
+        // Защищенная сборка ссылки на ядро из массива
         var corePath = ['https://', 'cdnjs.', 'cloudflare.', 'com/', 'ajax/', 'libs/', 'qrcodejs/', '1.0.0/', 'qrcode.min.js'];
         qrLibScript.src = corePath.join('');
         
@@ -102,7 +102,7 @@ function executeGenerationAndAds() {
         window.adScriptLoaded = true;
     }
 
-    // Плавно выводим рекламный блок (Adsterra считает честные показы и клики)
+    // Плавно выводим рекламный блок (Adsterra считает показы и клики)
     adContainer.style.display = 'block';
 }
 </script>
